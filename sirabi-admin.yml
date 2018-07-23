@@ -29,13 +29,12 @@ spring:
       test-on-borrow: true
       validation-query: SELECT * FROM rol
     db-mysql:
-      url: jdbc:mysql://localhost/sirabiProject
+      url: jdbc:mysql://192.168.1.105/sirabiProject
       username: root
-      password: sirabi
-      #password: aztektec321
+      password: root
       driver-class-name: com.mysql.jdbc.Driver
-      #test-on-borrow: true
-      #validation-query: SELECT * FROM rol
+      test-on-borrow: true
+      validation-query: SELECT * FROM rol
 
 ---
 spring:
