@@ -1,0 +1,65 @@
+#CLIENTE
+#OBJETIVO: programa administrador del acto de defuncion
+server:
+   port: ${PORT:8890}
+   
+
+##Proyecto cliente que nececita matricularse
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8879/eureka/ #https://eureka-mito.herokuapp.com/eureka/
+      
+      
+##para seguridad 
+security:
+   oauth2:
+    resource:
+      userInfoUri: http://localhost:8880/user #donde obtendra las credenciales del usuario logueado      
+      
+      
+spring:
+  profiles.active: development
+   
+   
+---
+spring:
+  profiles: development
+  datasource:
+    db-postgresql:
+      url: jdbc:postgresql://localhost/sirabiProject
+      username: postgres
+      password: postgres123
+      driver-class-name: org.postgresql.Driver
+      test-on-borrow: true
+      validation-query: SELECT * FROM rol
+    db-mysql:
+      url: jdbc:mysql://192.168.1.105/sirabiProject
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      test-on-borrow: true
+      validation-query: SELECT * FROM rol
+---
+
+spring:
+  profiles: test
+  datasource:
+    url: jdbc:postgresql://localhost/sirabiProject
+    username: postgres
+    password: postgres123
+    driver-class-name: org.postgresql.Driver
+
+
+logging:  
+  file: /home/isaac/Documents/logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    org.springframework.web: 'WARN'
+    org.renapo: 'WARN'
+  pattern:
+    #console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} | [%thread] | %-5level | %logger{36} - %msg%n"
+
+  
