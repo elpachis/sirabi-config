@@ -22,10 +22,9 @@ security:
 spring:    
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost/sirabiProject
+    url: jdbc:mysql://192.168.1.105/sirabiProject
     username: root
-    password: sirabi
-    #password: aztektec321
+    password: root
 
 logging:  
   file: /home/isaac/Documents/logs/${spring.application.name}.log
