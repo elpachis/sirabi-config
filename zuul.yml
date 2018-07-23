@@ -29,12 +29,24 @@ zuul:
       serviceId: SIRABI-ACTO-NACIMIENTO
     sirabi-busqueda-individuo:
       path: /sirabi-busqueda-individuo/**
-      #sensitiveHeaders:
+      sensitiveHeaders:
       serviceId: SIRABI-BUSQUEDA-INDIVIDUO
     sirabi-acta-reportes:
       path: /sirabi-acta-reportes/**
       sensitiveHeaders:
       serviceId: SIRABI-ACTA-REPORTES
+    sirabi-acto-matrimonio:
+      path: /sirabi-acto-matrimonio/**
+      sensitiveHeaders:
+      serviceId: SIRABI-ACTO-MATRIMONIO
+    sirabi-acto-divorcio:
+      path: /sirabi-acto-divorcio/**
+      sensitiveHeaders:
+      serviceId: SIRABI-ACTO-DIVORCIO
+    sirabi-acto-reconocimiento:
+      path: /sirabi-acto-reconocimiento/**
+      sensitiveHeaders:
+      serviceId: SIRABI-ACTO-RECONOCIMIENTO
       
 logging:  
   file: /home/isaac/Documents/logs/${spring.application.name}.log
